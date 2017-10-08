@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv bash
 
+chmod -R 777 /quassel
+
 exec \
 	s6-setuidgid abc quasselcore \
-	-c /config -p 4242 --require-ssl --select-backend=PostgreSQL
+	-c /quassel -p 4242 --require-ssl
